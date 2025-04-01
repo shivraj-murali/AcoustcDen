@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.hero-content{
+  font-family: "Playfair Display", serif;
+
+}
+
+@layer base {
+  :root {
+    --background: 35 15% 96%;
+    --foreground: 38 10% 19%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 38 10% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 38 10% 19%;
+
+    --primary: 38 10% 19%;
+    --primary-foreground: 35 15% 96%;
+
+    --secondary: 37 37% 52%;
+    --secondary-foreground: 35 15% 96%;
+
+    --muted: 35 15% 90%;
+    --muted-foreground: 38 10% 40%;
+
+    --accent: 344 16% 60%;
+    --accent-foreground: 35 15% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 35 15% 96%;
+
+    --border: 35 15% 85%;
+    --input: 35 15% 85%;
+    --ring: 38 10% 19%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 38 10% 19%;
+    --foreground: 35 15% 96%;
+
+    --card: 38 10% 22%;
+    --card-foreground: 35 15% 96%;
+
+    --popover: 38 10% 22%;
+    --popover-foreground: 35 15% 96%;
+
+    --primary: 35 15% 96%;
+    --primary-foreground: 38 10% 19%;
+
+    --secondary: 37 37% 52%;
+    --secondary-foreground: 38 10% 19%;
+
+    --muted: 38 10% 30%;
+    --muted-foreground: 35 15% 80%;
+
+    --accent: 344 16% 60%;
+    --accent-foreground: 35 15% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 35 15% 96%;
+
+    --border: 38 10% 30%;
+    --input: 38 10% 30%;
+    --ring: 35 15% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-normal;
+  }
+  p, span, a, button, li {
+    @apply font-work-sans;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .hero-section {
+    @apply relative min-h-[500px] sm:min-h-[600px] h-[80vh] sm:h-[85vh] md:h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20;
+  }
+
+  .hero-image {
+    @apply absolute inset-0 z-0 w-full h-full object-cover;
+  }
+
+  .hero-content {
+    @apply relative z-10 text-center text-white max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-playfair mb-4 sm:mb-6 text-primary;
+  }
+
+  .section-subtitle {
+    @apply text-lg sm:text-xl md:text-2xl font-playfair mb-3 sm:mb-4 text-primary/90;
+  }
+}
