@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import NewFooter from "@/components/NewFooter";
 import HeroSection from "@/components/HeroSection";
@@ -5,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import FounderProfile from "@/components/FounderProfile";
 import Image from "next/image";
 import ProductGrid from "@/components/ProductGrid";
+import Preloader from "@/components/Preloader";
 
 const product = [
   {
@@ -82,8 +85,20 @@ const testimonials = [
 ];
 
 export default function Home() {
+  const [contentLoaded, setContentLoaded] = useState(false);
+  
+  useEffect(() => {
+    // Set content as loaded once component mounts
+    setContentLoaded(true);
+  }, []);
+
   return (
-    <main>
+    <> 
+    <Preloader 
+        duration={3000} 
+        logoPath="/logo.svg" // Update this to your actual SVG logo path
+      />
+    <main className={contentLoaded ? "opacity-100 transition-opacity duration-500" : "opacity-0"}>
       <Header />
 
       <HeroSection
@@ -170,5 +185,6 @@ export default function Home() {
 
       <NewFooter />
     </main>
+    </>
   );
 }

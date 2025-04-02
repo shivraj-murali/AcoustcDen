@@ -18,8 +18,7 @@ import { useState } from "react";
 export default function Header() {
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
-      {/* Applied container-custom which you might have defined elsewhere, otherwise use 'container mx-auto px-4' */}
+    <header className="absolute top-0 left-0 w-full z-20 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8"> {/* Using standard container with padding */}
         <div className="flex justify-between items-center py-4 md:py-6">
           {/* Logo - Increased Size */}

@@ -23,12 +23,6 @@ interface HeroSectionProps {
   title: string;
   subtitle?: string;
   imageSrc: string; // imageSrc is now used again
-  primaryButtonText?: string;
-  primaryButtonUrl?: string;
-  secondaryButtonText?: string;
-  secondaryButtonUrl?: string;
-  tertiaryButtonText?: string;
-  tertiaryButtonUrl?: string;
 }
 
 export default function HeroSection({
@@ -79,13 +73,6 @@ export default function HeroSection({
                   {subtitle}
                 </h2>
               )}
-
-              {/* Optional Button Area (style for peach-cream text) */}
-              {/*
-              <div className="mt-8 flex justify-start gap-4 md:mt-10">
-                // Buttons styled for light text on potentially dark/mixed background
-              </div>
-              */}
             </div>
         </div>
       </div>
